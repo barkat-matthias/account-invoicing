@@ -37,6 +37,7 @@ addon | version | maintainers | summary
 [partner_invoicing_mode](partner_invoicing_mode/) | 17.0.1.0.0 |  | Base module for handling multiple partner invoicing mode
 [portal_account_personal_data_only](portal_account_personal_data_only/) | 17.0.1.0.0 |  | Portal Accounting Personal Data Only
 [product_form_account_move_line_link](product_form_account_move_line_link/) | 17.0.1.0.0 |  | Adds a button on product forms to access Journal Items
+[purchase_stock_picking_return_invoicing](purchase_stock_picking_return_invoicing/) | 17.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) [![MiquelRForgeFlow](https://github.com/MiquelRForgeFlow.png?size=30px)](https://github.com/MiquelRForgeFlow) | Add an option to refund returned pickings
 [sale_invoicing_date_selection](sale_invoicing_date_selection/) | 17.0.1.0.0 | [![sergio-teruel](https://github.com/sergio-teruel.png?size=30px)](https://github.com/sergio-teruel) | Set date invoice when you create invoices
 [sale_order_invoicing_grouping_criteria](sale_order_invoicing_grouping_criteria/) | 17.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Sales order invoicing grouping criteria
 [sale_order_invoicing_qty_percentage](sale_order_invoicing_qty_percentage/) | 17.0.1.0.0 | [![pedrobaeza](https://github.com/pedrobaeza.png?size=30px)](https://github.com/pedrobaeza) | Sales order invoicing by percentage of the quantity
