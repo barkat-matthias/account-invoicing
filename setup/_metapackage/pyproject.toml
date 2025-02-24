@@ -1,6 +1,6 @@
 [project]
 name = "odoo-addons-oca-account-invoicing"
-version = "17.0.20250221.0"
+version = "17.0.20250224.0"
 dependencies = [
     "odoo-addon-account_global_discount>=17.0dev,<17.1dev",
     "odoo-addon-account_invoice_block_payment>=17.0dev,<17.1dev",
@@ -22,6 +22,7 @@ dependencies = [
     "odoo-addon-sale_invoicing_date_selection>=17.0dev,<17.1dev",
     "odoo-addon-sale_order_invoicing_grouping_criteria>=17.0dev,<17.1dev",
     "odoo-addon-sale_order_invoicing_qty_percentage>=17.0dev,<17.1dev",
+    "odoo-addon-stock_picking_invoicing>=17.0dev,<17.1dev",
 ]
 classifiers=[
     "Programming Language :: Python",
