@@ -8,7 +8,9 @@
 
 import numbers
 
-from odoo import api, models
+from markupsafe import Markup
+
+from odoo import _, api, models
 from odoo.tools import float_is_zero
 
 
@@ -229,7 +231,53 @@ class AccountMove(models.Model):
             old_invoices = self.env["account.move"].browse(old_ids)
             old_invoices.with_context(is_merge=True).button_cancel()
         self.merge_callback(invoices_info, old_invoices)
+        for new_invoice_id, old_invoice_ids in invoices_info.items():
+            new_invoice = self.browse(new_invoice_id)
+            old_invoices = self.browse(old_invoice_ids)
+            # 1. message post on new invoice to indicate
+            # it has been created as result of merging original invoices
+            new_invoice.post_merge_message(old_invoices)
+            # 2. fill char/text fields as concatenation
+            # of original invoices `object_entry` field
+            new_invoice.post_process_fields(old_invoices)
         return invoices_info
+
+    def _get_post_merge_message_invoice_identifier(self):
+        """
+        Return the identifier of the invoice to be used in the post merge message
+        """
+        return f"{self._name}({self.id})"
+
+    def post_merge_message(self, invoice_list):
+        message_body = _("Invoice merged from :")
+        message_body += Markup("<ul>")
+        for invoice in invoice_list:
+            message_body += Markup(
+                f"<li>"
+                f"{invoice._get_html_link(title=invoice._get_post_merge_message_invoice_identifier())}"
+                f" - {invoice.amount_total}"
+                f"</li>"
+            )
+        message_body += Markup("</ul>")
+
+        self.message_post(message_type="notification", body=message_body)
+
+    @api.model
+    def _get_fields_to_concatenate_after_merge(self):
+        """
+        Return the list of fields to concatenate after merge
+        For example you merge two invoices with different `entry_object` field
+        The result invoice will have the `entry_object` field set to
+        `invoice1.entry_object // invoice2.entry_object`
+        """
+        return []
+
+    def post_process_fields(self, invoice_list):
+        fields_to_concatenate = self._get_fields_to_concatenate_after_merge()
+        for field in fields_to_concatenate:
+            self[field] = " // ".join(
+                [invoice[field] for invoice in invoice_list if invoice[field]]
+            )
 
     @staticmethod
     def order_line_update_invoice_lines(todos, all_old_inv_line):

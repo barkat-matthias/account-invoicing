@@ -31,11 +31,11 @@ Account Invoice Merge
 This module adds an action in the invoices list to merge invoices. Here
 are the conditions to allow merging:
 
--  Type should be the same (Customer Invoice, Supplier Invoice, Customer
-   Refund or Supplier Refund)
--  Partner should be the same
--  Currency should be the same
--  Account receivable account should be the same
+- Type should be the same (Customer Invoice, Supplier Invoice, Customer
+  Refund or Supplier Refund)
+- Partner should be the same
+- Currency should be the same
+- Account receivable account should be the same
 
 **Table of contents**
 
@@ -79,23 +79,23 @@ Authors
 Contributors
 ------------
 
--  Ian Li <ian.li@elico-corp.com>
+- Ian Li <ian.li@elico-corp.com>
 
--  Cédric Pigeon <cedric.pigeon@acsone.eu>
+- Cédric Pigeon <cedric.pigeon@acsone.eu>
 
--  Lois Rilo <lois.rilo@eficent.com>
+- Lois Rilo <lois.rilo@eficent.com>
 
--  Miquel Raïch <miquel.raich@eficent.com>
+- Miquel Raïch <miquel.raich@eficent.com>
 
--  Sylvain Van Hoof <sylvain@okia.be>
+- Sylvain Van Hoof <sylvain@okia.be>
 
--  Freni Patel <fpatel@opensourceintegrators.com>
+- Freni Patel <fpatel@opensourceintegrators.com>
 
--  Marcos Oitabén <marcos.oitaben@dynapps.eu>
+- Marcos Oitabén <marcos.oitaben@dynapps.eu>
 
--  `Trobz <https://trobz.com>`__:
+- `Trobz <https://trobz.com>`__:
 
-      -  Nguyễn Minh Chiến <chien@trobz.com>
+     - Nguyễn Minh Chiến <chien@trobz.com>
 
 Other credits
 -------------
